@@ -1,0 +1,85 @@
+<html>
+
+<head> 
+<title> yet another bae static app </title>
+</head>
+
+<body>
+<br>
+/************************************************************************/<br>
+/* <br>
+工作流程：<br>
+1 首先必须下载 stylesheets/packagename/config.xml <br>
+	这个文件记录服务器的 PACKAGE_CODE_VERSION tuijianVersion 和其他配置，是一个必须更的配置文件<br>
+	如果这个配置文件的PACKAGE_CODE_VERSION和当前客户端的不同那么，这个配置文件暂时是无效的，包括推荐也都是无效的<br>
+	只有当PACKAGE_CODE_VERSION和客户端的相同的时候，生效，<br>
+<br>
+2 生效后，会更新推荐信息 tuijian.txt or tuijian.ios.txt 这个txt内有自己的版本号采用大的覆盖小的原则，如果存在覆盖，则更新推荐的资源<br>
+3 根据tuijian.txt更新资源即可<br>
+*/<br>
+/************************************************************************/<br>
+<br>
+<br> hello world .gong.hm. ANDY'S APP ICON PUSH LIST CENTER! </br>
+<br> 推荐的编辑说明 v1.0 2014/12/19 </br>
+<br> 支持googleplay和ios，国外和国内请求 </br>
+<br>      </br>
+<br> 开发文档：</br>
+<br>      1.添加/Net,/Util到工程</br>
+<br>      2.在splash启动后添加：</br>
+<br>          GNetTuiJianMgr::Instance().init();</br>
+<br>          开始请求tuijian.txt，并根据返回开始load文件，注意这里并不阻塞所以不用判断网络什么的，文件完全可能在一分钟后下下来。</br>
+<br>      3.在想展示的layer init添加：</br>
+<br>          GNetTuiJianMgr::Instance().addTuiJianOnLayer(this);</br>
+<br>          这步会根据当前运行时的配置显示，是否显示取决于是否有对应的icon，即正在load的新版本iconpush只会在下次启动时配置。</br>
+
+<br>      4.Android编译的时候在.mk中添加：</br>
+<br>      
+                   \
+                   ../../Classes/Net/GNetEvent.cpp \
+                   ../../Classes/Net/GNetEventSender.cpp \
+                   ../../Classes/Net/GNetMessageMgr.cpp \
+                   ../../Classes/Net/GNetTuiJianMgr.cpp \
+                   \
+                   ../../Classes/Util/GameEffect.cpp \
+                   ../../Classes/Util/MyGKCenter.cpp \
+                   ../../Classes/Util/MusicManager.cpp \
+                   ../../Classes/Util/SGChannelSDK.cpp \
+                   ../../Classes/Util/SGIosStore.cpp \
+                   ../../Classes/Util/FileCenter.cpp
+</br>
+<br>      </br>
+<br>      </br>
+<br> 1.添加一个应用的推荐 </br>
+<br>     android:1.拷贝一个/x.x.x/文件夹，重命名为[编译时包名] </br>
+<br>            :2.修改x.x.x/tuijian.txt</br>
+<br>            :3.添加一个icon, 命名为x.x.x.png</br>
+<br>      </br>
+<br>     appstore:1.拷贝一个/x.x.x/文件夹，重命名为[编译时包名] </br>
+<br>            :2.修改x.x.x/tuijian.ios.txt</br>
+<br>            :3.添加一个icon, 命名为y.y.y.png</br>
+<br>            :4.修改packnamelst.xml，添加一行<y.y.y>appid</y.y.y></br>
+
+<br>            </br>
+<br>      </br>
+<br> 2.更新一个应用的推荐 </br>
+<br>     修改完成后，将tuijan.txt的version+1，提交</br>
+<br>            唯一不同需要注意的地方就是tuijian.ios.txt里用的是appstore的packagename,和同名的icon，packnamelst.xml为ios的packagename指定对应的id而已</br>
+<br> </br>
+<br> 文件结构</br>
+<br> /</br>
+<br> /stylesheets/</br>
+<br> /stylesheets/x.x.x/</br>
+<br> /stylesheets/x.x.x/tuijian.ios.txt</br>
+<br> /stylesheets/x.x.x/tuijian.txt</br>
+<br> /stylesheets/x.x.x.png</br>
+<br> /stylesheets/y.y.y.png</br>
+<br> /stylesheets/packnamelst.xml</br>
+<br></br>
+
+<br> 所有文件放在stylesheets下 </br>
+<br> 同一个游戏有一个相同的[编译时包名]，有两个icon，分别对应android和ios，icon根据不同系统的游戏包名命名</br>
+<br> 同一个游戏的推荐放在唯一的[编译时包名]文件夹下，（[编译时包名]基本是按照android的报名来的）</br>
+</body>
+
+
+</html>
