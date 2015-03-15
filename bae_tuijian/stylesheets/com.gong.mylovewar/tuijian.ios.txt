@@ -1,0 +1,1 @@
+packagename:com.g2.pokesea|version:4|tuijian0:padding_rightbottom,-40,600,com.gong.ichtusfree|tuijian1:padding_rightbottom,-110,600,com.gong.popstar|tuijian2:padding_rightbottom,-180,600,null|tuijian0_cn:padding_rightbottom,-40,600,com.gong.sswq|tuijian1_cn:padding_rightbottom,-110,600,com.gong.ichtusfree|tuijian2_cn:padding_rightbottom,-180,600,null|

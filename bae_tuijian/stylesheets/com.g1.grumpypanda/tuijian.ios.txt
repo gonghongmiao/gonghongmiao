@@ -1,0 +1,1 @@
+packagename:com.g1.topmagicstar|version:3|tuijian0:padding_rightbottom,-40,150,null|tuijian1:padding_rightbottom,-110,150,null|tuijian2:padding_rightbottom,-180,150,null|tuijian0_cn:padding_rightbottom,-40,150,com.gong.goldknightcastle|tuijian1_cn:padding_rightbottom,-110,150,com.gong.submarineunderwater|tuijian2_cn:padding_rightbottom,-180,150,com.gong.ichtusfree|

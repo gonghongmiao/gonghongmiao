@@ -1,0 +1,1 @@
+packagename:com.g1.topmagicstar|version:4|tuijian0:padding_rightbottom,-40,150,com.g1.candygirlhappytime|tuijian1:padding_rightbottom,-110,150,com.g1.topmagicstar|tuijian2:padding_rightbottom,-180,150,com.g2.littlepandarun|
